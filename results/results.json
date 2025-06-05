@@ -1,78 +1,52 @@
 {
-    "DhruvKikan_CV_2025January.pdf": {
-        "formatted_text": "Dhruv Kikan dhruv.kikan@igmail.com\nMobile: +91-9811954526 github.com/DhruvKikan\n\nkaggle.com/dheerov\nABOUT ME\n\nA motivated student pursuing a Bachelor\u2019s degree in Computer Science and Engineering. Experienced\nin using Python for Al and data science projects as well as Java and C/C++ to solve DSA problems.\nPassionate about exploring innovative ideas, learning new methods and solve real-world problems\nusing technology. Eager to learn further and to apply my skills to impactful projects.\n\nEDUCATION\n\n. Thapar Institute of Engineering and Technology Patiala, India\nBachelor of Technology - Computer Science and Engineering; CGPA: 7.66 2021 - 2025\n. Amity International School Delhi, India\nClass 12 (PCM) Percentage: 95.6 2021\n\nTECHNICAL SKILLS\n\n\u00ab Programming Languages: Java, Python, C/C++, R\n\ne Libraries and Frameworks: Scikit-learn, TensorFlow, OpenCV, MediaPipe, BeautifulSoup\ne Tools and Platforms: IntelliJ, Jupyter Notebook, MySQL, Postman, Spyder\n\ne Soft Skills: Critical Thinking, Time Management, Team Collaboration\n\nEXPERIENCE\n\n. Microsoft Learn Student Chapter, Derabassi\nVice Marketing and Management Head 2022 - 2023\no Organized cryptic hunts, contacted sponsors and helped create and design some questions of\nthe hunt.\nInternship Experience Offline\nJava Developer Intern, duly 2023 - August 2023\no Gained hands-on experience with multithreading and concurrency in Java.\n\nPROJECTS\n\n\u00ab Style Transfer Between Images (Oct 2024): Github:\nhttps: / /github.com /DhruvKikan/Neural-Style-Transfer_Base\nUsing a feature extraction model to generate a new image based on the extracted style for an input image.\ne Automatic Car Number-plate Recognizer (June 2023): Github:\ngithub.com/DhruvKikan/Automatic_Numberplate_Recog\nPython-based application to recognize number plates using EasyOCR and OpenCV.\ne AlignMe (April 2023): Github: github.com/DhruvKikan/alignMe\nAn Al-powered system using MediaPipe to analyze and correct postures during exercises and keep a count\nof the exercises.\ne Task Automation for Lazy People (Sept 2024): Github:\ngithub.com/DhruvKikan/Task-automation-for-lazy-peoples-\n\nA collection of PowerShell scripts to automate repetitive tasks like setting up Sercpy.\n\nCERTIFICATIONS\n\n\u00ab Coursera Data Science Certificates: Machine Learning, Data Analysis, and AI certificates. Accessible\nhere: GitHub Repo Link\n\nHonors AND AWARDS\n\n\u00a2 F1 in Schools: Reached Top 64 Teams (2018)\n\ne INSSDC (Indian Nationals Space Settlement Design Competition): Overall Winners for\ndesigning a proposal for Earth-Mars in-orbit settlement (2019)\n\ne ARSSDC (Asian Regional Space Settlement Design Competition): 2nd Runners Up for designing\na proposal for the settlement regarding the problem statement (2020)",
-        "plaintext": "Dhruv Kikan dhruv.kikan@igmail.com Mobile: +91-9811954526 github.com/DhruvKikan kaggle.com/dheerov ABOUT ME A motivated student pursuing a Bachelor\u2019s degree in Computer Science and Engineering. Experienced in using Python for Al and data science projects as well as Java and C/C++ to solve DSA problems. Passionate about exploring innovative ideas, learning new methods and solve real-world problems using technology. Eager to learn further and to apply my skills to impactful projects. EDUCATION . Thapar Institute of Engineering and Technology Patiala, India Bachelor of Technology - Computer Science and Engineering; CGPA: 7.66 2021 - 2025 . Amity International School Delhi, India Class 12 (PCM) Percentage: 95.6 2021 TECHNICAL SKILLS \u00ab Programming Languages: Java, Python, C/C++, R e Libraries and Frameworks: Scikit-learn, TensorFlow, OpenCV, MediaPipe, BeautifulSoup e Tools and Platforms: IntelliJ, Jupyter Notebook, MySQL, Postman, Spyder e Soft Skills: Critical Thinking, Time Management, Team Collaboration EXPERIENCE . Microsoft Learn Student Chapter, Derabassi Vice Marketing and Management Head 2022 - 2023 o Organized cryptic hunts, contacted sponsors and helped create and design some questions of the hunt. Internship Experience Offline Java Developer Intern, duly 2023 - August 2023 o Gained hands-on experience with multithreading and concurrency in Java. PROJECTS \u00ab Style Transfer Between Images (Oct 2024): Github: https: / /github.com /DhruvKikan/Neural-Style-Transfer_Base Using a feature extraction model to generate a new image based on the extracted style for an input image. e Automatic Car Number-plate Recognizer (June 2023): Github: github.com/DhruvKikan/Automatic_Numberplate_Recog Python-based application to recognize number plates using EasyOCR and OpenCV. e AlignMe (April 2023): Github: github.com/DhruvKikan/alignMe An Al-powered system using MediaPipe to analyze and correct postures during exercises and keep a count of the exercises. e Task Automation for Lazy People (Sept 2024): Github: github.com/DhruvKikan/Task-automation-for-lazy-peoples- A collection of PowerShell scripts to automate repetitive tasks like setting up Sercpy. CERTIFICATIONS \u00ab Coursera Data Science Certificates: Machine Learning, Data Analysis, and AI certificates. Accessible here: GitHub Repo Link Honors AND AWARDS \u00a2 F1 in Schools: Reached Top 64 Teams (2018) e INSSDC (Indian Nationals Space Settlement Design Competition): Overall Winners for designing a proposal for Earth-Mars in-orbit settlement (2019) e ARSSDC (Asian Regional Space Settlement Design Competition): 2nd Runners Up for designing a proposal for the settlement regarding the problem statement (2020)",
+    "CV1.pdf": {
+        "formatted_text": "Base Extracted Format",
+        "plaintext": "Pre-processed Text",
         "date_processed": "2025-05-19 20:15:23",
-        "text_file": "DhruvKikan_CV_2025January.txt",
+        "text_file": "CV1.txt",
         "cleaned_data": {
-            "first_name": "Dhruv",
+            "first_name": "",
             "middle_name": "",
-            "last_name": "Kikan",
+            "last_name": "",
             "contact_numbers": [
-                "+91-9811954526"
+                "List of phone numbers found"
             ],
             "email_ids": [
-                "dhruv.kikan@igmail.com"
+                "List of email IDs found"
             ],
             "education": {
-                "class_12": "Amity International School Delhi, India - Class 12 (PCM) Percentage: 95.6 (2021)",
-                "college": "Thapar Institute of Engineering and Technology Patiala, India - Bachelor of Technology - Computer Science and Engineering; CGPA: 7.66 (2021 - 2025)",
+                "class_12": "",
+                "college": "",
                 "higher_studies": ""
             },
-            "work_experience": "Microsoft Learn Student Chapter, Derabassi - Vice Marketing and Management Head (2022 - 2023): Organized cryptic hunts, contacted sponsors and helped create and design some questions of the hunt. Java Developer Intern (July 2023 - August 2023): Gained hands-on experience with multithreading and concurrency in Java.",
+            "work_experience": "",
             "skillset": [
-                "Critical Thinking",
-                "Time Management",
-                "Team Collaboration"
+                ""
             ],
             "toolset": [
-                "IntelliJ",
-                "Jupyter Notebook",
-                "MySQL",
-                "Postman",
-                "Spyder"
+                ""
             ],
             "programming_languages": [
-                "Java",
-                "Python",
-                "C/C++",
-                "R"
+                ""
             ],
-            "projects": [
+            "projects": [ <List of projects>
                 {
-                    "name": "Style Transfer Between Images",
-                    "description": "Using a feature extraction model to generate a new image based on the extracted style for an input image.",
+                    "name": "",
+                    "description": "",
                     "tech_stack": [
-                        "Neural-Style-Transfer"
+                        ""
                     ]
                 },
                 {
-                    "name": "Automatic Car Number-plate Recognizer",
-                    "description": "Python-based application to recognize number plates using EasyOCR and OpenCV.",
+                    "name": "",
+                    "description": "",
                     "tech_stack": [
-                        "Python",
-                        "EasyOCR",
-                        "OpenCV"
+                        ""
                     ]
                 },
-                {
-                    "name": "AlignMe",
-                    "description": "An AI-powered system using MediaPipe to analyze and correct postures during exercises and keep a count of the exercises.",
-                    "tech_stack": [
-                        "MediaPipe",
-                        "AI"
-                    ]
-                },
-                {
-                    "name": "Task Automation for Lazy People",
-                    "description": "A collection of PowerShell scripts to automate repetitive tasks like setting up Sercpy.",
-                    "tech_stack": [
-                        "PowerShell"
-                    ]
-                }
             ],
             "certifications": [
-                "Coursera Data Science Certificates: Machine Learning, Data Analysis, and AI certificates"
+                ""
             ],
             "relevant_links": {
                 "linkedin": "",
@@ -84,64 +58,4 @@
             }
         }
     },
-    "Aakash_Rustagi_Resume.pdf": {
-        "formatted_text": "About\n\nComputer Science Engineering student.| know basics of\npython, C++,Java.l am currently exploring Machine learning.\nIam a quick learner, self-motivated, and dedicated to my\nwork. With good communication skills, | work effectively in\nteams.\n\nEducation\n\nJain Public School,Rewari 2007-2021\n\u00ab Class XII : 95.6%\n\nAakas h \u00ab Central Board of Secondary Education\nR u stag i Thapar Institute of Engineering and\n\nTechnology, Patiala October,2021-June,2025\n+ B.E(CSE\nUNDERGRADUATE STUDENT ( )\n* CGPA: 8.78\nContact Extracurricular Activities\n9 5802,Khasapura,Rewari Director of Community Services 2022 - 2023\nG2 aakashrustagi18@gmail.com + Rotaract Club of TIET(DB)\n\u00ab Successfully managed and organised\n(B Aakash-Rustagi/linkedin/ Blood donation drive.\n\u00a9 Aakash-Rustagi/github/ \u00ab Donated food to an orphanage.\nVice Management Head 2022 - 2023\n. + Fine Arts and Photography Society, TIET\nSkills DB\nTechnical Skills + Successfully managed and organised\n\u2018Stargaze\u2019 .\n+ Machine Learning\n+ Languages: Python, C++, .\nJava Projects\nSoft Skills Handwritten Text Recognition\n\u00ab Communication * Language used: Python\n\u00a2 Adaptability \u00ab Platform: Jupyter\n\u00a2 Critical Thinking - - -\n+ Time Management Movie and Web-Series Recommendation\n\n+ Language used: Python\n+ Platform: VS Code\n+ Type: Content based",
-        "plaintext": "About Computer Science Engineering student.| know basics of python, C++,Java.l am currently exploring Machine learning. Iam a quick learner, self-motivated, and dedicated to my work. With good communication skills, | work effectively in teams. Education Jain Public School,Rewari 2007-2021 \u00ab Class XII : 95.6% Aakas h \u00ab Central Board of Secondary Education R u stag i Thapar Institute of Engineering and Technology, Patiala October,2021-June,2025 + B.E(CSE UNDERGRADUATE STUDENT ( ) * CGPA: 8.78 Contact Extracurricular Activities 9 5802,Khasapura,Rewari Director of Community Services 2022 - 2023 G2 aakashrustagi18@gmail.com + Rotaract Club of TIET(DB) \u00ab Successfully managed and organised (B Aakash-Rustagi/linkedin/ Blood donation drive. \u00a9 Aakash-Rustagi/github/ \u00ab Donated food to an orphanage. Vice Management Head 2022 - 2023 . + Fine Arts and Photography Society, TIET Skills DB Technical Skills + Successfully managed and organised \u2018Stargaze\u2019 . + Machine Learning + Languages: Python, C++, . Java Projects Soft Skills Handwritten Text Recognition \u00ab Communication * Language used: Python \u00a2 Adaptability \u00ab Platform: Jupyter \u00a2 Critical Thinking - - - + Time Management Movie and Web-Series Recommendation + Language used: Python + Platform: VS Code + Type: Content based",
-        "date_processed": "2025-05-19 20:17:23",
-        "text_file": "Aakash_Rustagi_Resume.txt",
-        "cleaned_data": {
-            "first_name": "Aakash",
-            "middle_name": "",
-            "last_name": "Rustagi",
-            "contact_numbers": [],
-            "email_ids": [
-                "aakashrustagi18@gmail.com"
-            ],
-            "education": {
-                "class_12": "Jain Public School, Rewari (2007-2021), Class XII: 95.6%",
-                "college": "Thapar Institute of Engineering and Technology, Patiala (October 2021-June 2025), B.E (CSE), CGPA: 8.78",
-                "higher_studies": ""
-            },
-            "work_experience": "",
-            "skillset": [
-                "Communication",
-                "Adaptability",
-                "Critical Thinking",
-                "Time Management"
-            ],
-            "toolset": [
-                "Machine Learning"
-            ],
-            "programming_languages": [
-                "Python",
-                "C++",
-                "Java"
-            ],
-            "projects": [
-                {
-                    "name": "Handwritten Text Recognition",
-                    "description": "",
-                    "tech_stack": [
-                        "Python",
-                        "Jupyter"
-                    ]
-                },
-                {
-                    "name": "Movie and Web-Series Recommendation",
-                    "description": "",
-                    "tech_stack": [
-                        "Python",
-                        "VS Code"
-                    ]
-                }
-            ],
-            "certifications": [],
-            "relevant_links": {
-                "linkedin": "Aakash-Rustagi/linkedin/",
-                "github": "Aakash-Rustagi/github/",
-                "portfolio": "",
-                "other": []
-            }
-        }
-    }
 }
