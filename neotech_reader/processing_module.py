@@ -14,7 +14,7 @@ logging.basicConfig(level = logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Hugging Face API configuration
-HF_API_TOKEN = "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"  # Replace with your Hugging Face token
+HF_API_TOKEN = "hf_MY_HUGGINGFACE_TOKEN_HERE"  # Replace with your Hugging Face token
 # You can get a free token from https://huggingface.co/settings/tokens
 HF_API_URL = "https://router.huggingface.co/novita/v3/openai/chat/completions"  # New chat completions API
 HF_MODEL = "deepseek/deepseek-v3-0324"  # Model to use for chat completions
