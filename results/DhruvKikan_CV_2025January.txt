@@ -1,0 +1,67 @@
+Dhruv Kikan dhruv.kikan@igmail.com
+Mobile: +91-9811954526 github.com/DhruvKikan
+
+kaggle.com/dheerov
+ABOUT ME
+
+A motivated student pursuing a Bachelor’s degree in Computer Science and Engineering. Experienced
+in using Python for Al and data science projects as well as Java and C/C++ to solve DSA problems.
+Passionate about exploring innovative ideas, learning new methods and solve real-world problems
+using technology. Eager to learn further and to apply my skills to impactful projects.
+
+EDUCATION
+
+. Thapar Institute of Engineering and Technology Patiala, India
+Bachelor of Technology - Computer Science and Engineering; CGPA: 7.66 2021 - 2025
+. Amity International School Delhi, India
+Class 12 (PCM) Percentage: 95.6 2021
+
+TECHNICAL SKILLS
+
+« Programming Languages: Java, Python, C/C++, R
+
+e Libraries and Frameworks: Scikit-learn, TensorFlow, OpenCV, MediaPipe, BeautifulSoup
+e Tools and Platforms: IntelliJ, Jupyter Notebook, MySQL, Postman, Spyder
+
+e Soft Skills: Critical Thinking, Time Management, Team Collaboration
+
+EXPERIENCE
+
+. Microsoft Learn Student Chapter, Derabassi
+Vice Marketing and Management Head 2022 - 2023
+o Organized cryptic hunts, contacted sponsors and helped create and design some questions of
+the hunt.
+Internship Experience Offline
+Java Developer Intern, duly 2023 - August 2023
+o Gained hands-on experience with multithreading and concurrency in Java.
+
+PROJECTS
+
+« Style Transfer Between Images (Oct 2024): Github:
+https: / /github.com /DhruvKikan/Neural-Style-Transfer_Base
+Using a feature extraction model to generate a new image based on the extracted style for an input image.
+e Automatic Car Number-plate Recognizer (June 2023): Github:
+github.com/DhruvKikan/Automatic_Numberplate_Recog
+Python-based application to recognize number plates using EasyOCR and OpenCV.
+e AlignMe (April 2023): Github: github.com/DhruvKikan/alignMe
+An Al-powered system using MediaPipe to analyze and correct postures during exercises and keep a count
+of the exercises.
+e Task Automation for Lazy People (Sept 2024): Github:
+github.com/DhruvKikan/Task-automation-for-lazy-peoples-
+
+A collection of PowerShell scripts to automate repetitive tasks like setting up Sercpy.
+
+CERTIFICATIONS
+
+« Coursera Data Science Certificates: Machine Learning, Data Analysis, and AI certificates. Accessible
+here: GitHub Repo Link
+
+Honors AND AWARDS
+
+¢ F1 in Schools: Reached Top 64 Teams (2018)
+
+e INSSDC (Indian Nationals Space Settlement Design Competition): Overall Winners for
+designing a proposal for Earth-Mars in-orbit settlement (2019)
+
+e ARSSDC (Asian Regional Space Settlement Design Competition): 2nd Runners Up for designing
+a proposal for the settlement regarding the problem statement (2020)

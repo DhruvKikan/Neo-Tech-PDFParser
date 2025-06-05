@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Upload CV - OCR Processing</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+    <div class = "nav-links">
+        <a href = "{{ url_for('upload_file') }}" class = "active">Upload CVs</a>
+        <a href = "{{ url_for('results') }}">Results & Candidates</a>
+    </div>
+
+    <div class = "upload-container">
+        <h1>Upload CV for OCR Processing</h1>
+        
+        {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class = "alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action = "{{ url_for('upload_file') }}" method = "post" enctype = "multipart/form-data">
+            <div class = "upload-area" onclick = "document.getElementById('file').click()">
+                <p class = "upload-instructions">Click to select a file or drag and drop here</p>
+                <input type = "file" name = "files" id = "file" class = "file-input" accept = ".pdf,.jpg,.jpeg,.png" required>
+                <p id = "selected-file">No file selected</p>
+            </div>
+            <div class = "button-container">
+                <button type = "submit" class = "btn btn-primary">Upload & Process</button>
+                <form action = "{{ url_for('reset_data') }}" method = "post" class = "reset-form">
+                    <button type = "submit" class = "btn btn-danger" onclick = "return confirm('Are you sure you want to reset all data? This will delete all processed documents and candidates.')">Reset All Data</button>
+                </form>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('file').addEventListener('change', function(e) {
+            var fileName = e.target.files[0] ? e.target.files[0].name : 'No file selected';
+            document.getElementById('selected-file').textContent = fileName;
+        });
+
+        // Drag and drop functionality
+        const uploadArea = document.querySelector('.upload-area');
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            uploadArea.style.borderColor = '#007bff';
+        }
+
+        function unhighlight(e) {
+            uploadArea.style.borderColor = '#ddd';
+        }
+
+        uploadArea.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            document.getElementById('file').files = files;
+            document.getElementById('selected-file').textContent = files[0].name;
+        }
+    </script>
+</body>
+</html>

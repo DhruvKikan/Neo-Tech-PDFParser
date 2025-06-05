@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>{% if is_new %}New{% elif is_edit_mode %}Edit{% else %}View{% endif %} Candidate</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+    <div class = "nav-links">
+        <a href = "{{ url_for('upload_file') }}">Upload CVs</a>
+        <a href = "{{ url_for('results') }}">Results & Candidates</a>
+        <a href = "{{ url_for('results') }}" class = "active">Candidates</a>
+    </div>
+
+    <div class = "container">
+        {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class = "alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h1>{% if is_new %}New{% elif is_edit_mode %}Edit{% else %}View{% endif %} Candidate</h1>
+        
+        {% if error %}
+        <div class = "alert alert-danger">{{ error }}</div>
+        {% endif %}
+        
+        {% if is_edit_mode %}
+        <form id = "candidateForm" method = "POST" action = "{% if is_new %}{{ url_for('new_candidate') }}{% else %}{{ url_for('save_candidate', filename = filename) }}{% endif %}" class = "form-container">
+            <div class="section-header">
+                <h2>Personal Information</h2>
+            </div>
+            
+            <div class = "form-group">
+                <label for = "first_name">First Name:</label>
+                <input type = "text" id = "first_name" name = "first_name" value = "{{ candidate.first_name if candidate else '' }}" required>
+            </div>
+
+            <div class = "form-group">
+                <label for = "middle_name">Middle Name:</label>
+                <input type = "text" id = "middle_name" name = "middle_name" value = "{{ candidate.middle_name if candidate else '' }}">
+            </div>
+
+            <div class = "form-group">
+                <label for = "last_name">Last Name:</label>
+                <input type = "text" id = "last_name" name = "last_name" value = "{{ candidate.last_name if candidate else '' }}" required>
+            </div>
+
+            <div class = "form-group">
+                <label for = "contact_numbers">Contact Numbers (comma-separated):</label>
+                <input type = "text" id = "contact_numbers" name = "contact_numbers" value = "{{ candidate.contact_numbers|join(', ') if candidate and candidate.contact_numbers else '' }}" required>
+            </div>
+
+            <div class = "form-group">
+                <label for = "email_ids">Email IDs (comma-separated):</label>
+                <input type = "text" id = "email_ids" name = "email_ids" value = "{{ candidate.email_ids|join(', ') if candidate and candidate.email_ids else '' }}">
+            </div>
+
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+
+            <div class = "form-group">
+                <label for = "education_class_12">Class 12:</label>
+                <textarea id = "education_class_12" name = "education_class_12" rows = "2">{{ candidate.education.class_12 if candidate and candidate.education else '' }}</textarea>
+            </div>
+
+            <div class = "form-group">
+                <label for = "education_college">College:</label>
+                <textarea id = "education_college" name = "education_college" rows = "2">{{ candidate.education.college if candidate and candidate.education else '' }}</textarea>
+            </div>
+
+            <div class = "form-group">
+                <label for = "education_higher_studies">Higher Studies (if any):</label>
+                <textarea id = "education_higher_studies" name = "education_higher_studies" rows = "2">{{ candidate.education.higher_studies if candidate and candidate.education else '' }}</textarea>
+            </div>
+
+            <div class="section-header">
+                <h2>Work & Skills</h2>
+            </div>
+
+            <div class = "form-group">
+                <label for = "work_experience">Work Experience:</label>
+                <textarea id = "work_experience" name = "work_experience" rows = "6">{{ candidate.work_experience if candidate else '' }}</textarea>
+            </div>
+
+            <div class = "form-group">
+                <label for = "skillset">Skillset (non-programming & soft skills, comma-separated):</label>
+                <input type = "text" id = "skillset" name = "skillset" value = "{{ candidate.skillset|join(', ') if candidate and candidate.skillset else '' }}">
+            </div>
+
+            <div class = "form-group">
+                <label for = "toolset">Technical Tools & Concepts (comma-separated):</label>
+                <input type = "text" id = "toolset" name = "toolset" value = "{{ candidate.toolset|join(', ') if candidate and candidate.toolset else '' }}">
+            </div>
+
+            <div class = "form-group">
+                <label for = "programming_languages">Programming Languages (comma-separated):</label>
+                <input type = "text" id = "programming_languages" name = "programming_languages" value = "{{ candidate.programming_languages|join(', ') if candidate and candidate.programming_languages else '' }}">
+            </div>
+
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+
+            <div id="projects-container">
+                {% if candidate and candidate.projects %}
+                    {% for project in candidate.projects %}
+                    <div class="project-entry">
+                        <div class="form-group">
+                            <label>Project Name:</label>
+                            <input type="text" name="project_names[]" value="{{ project.name }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea name="project_descriptions[]" rows="2">{{ project.description }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Tech Stack (comma-separated):</label>
+                            <input type="text" name="project_tech_stacks[]" value="{{ project.tech_stack|join(', ') if project.tech_stack else '' }}">
+                        </div>
+                        <button type="button" class="btn btn-danger remove-project">Remove</button>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <div class="project-entry">
+                    <div class="form-group">
+                        <label>Project Name:</label>
+                        <input type="text" name="project_names[]">
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <textarea name="project_descriptions[]" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Tech Stack (comma-separated):</label>
+                        <input type="text" name="project_tech_stacks[]">
+                    </div>
+                    <button type="button" class="btn btn-danger remove-project">Remove</button>
+                </div>
+                {% endif %}
+            </div>
+            <button type="button" id="add-project" class="btn btn-secondary">Add Project</button>
+
+            <div class="section-header">
+                <h2>Additional Information</h2>
+            </div>
+
+            <div class = "form-group">
+                <label for = "certifications">Certifications (comma-separated):</label>
+                <input type = "text" id = "certifications" name = "certifications" value = "{{ candidate.certifications|join(', ') if candidate and candidate.certifications else '' }}">
+            </div>
+
+            <div class="section-header">
+                <h2>Relevant Links</h2>
+            </div>
+
+            <div class = "form-group">
+                <label for = "linkedin">LinkedIn:</label>
+                <input type = "url" id = "linkedin" name = "linkedin" value = "{{ candidate.relevant_links.linkedin if candidate and candidate.relevant_links else '' }}">
+            </div>
+
+            <div class = "form-group">
+                <label for = "github">GitHub:</label>
+                <input type = "url" id = "github" name = "github" value = "{{ candidate.relevant_links.github if candidate and candidate.relevant_links else '' }}">
+            </div>
+
+            <div class = "form-group">
+                <label for = "portfolio">Portfolio:</label>
+                <input type = "url" id = "portfolio" name = "portfolio" value = "{{ candidate.relevant_links.portfolio if candidate and candidate.relevant_links else '' }}">
+            </div>
+
+            <div class = "form-group">
+                <label for = "other_links">Other Links (comma-separated):</label>
+                <input type = "text" id = "other_links" name = "other_links" value = "{{ candidate.relevant_links.other|join(', ') if candidate and candidate.relevant_links and candidate.relevant_links.other else '' }}">
+            </div>
+
+            <div class = "form-actions">
+                <button type = "submit" class = "btn btn-primary">{% if is_new %}Create{% else %}Save Changes{% endif %}</button>
+                <a href = "{{ url_for('results') }}" class = "btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+        {% else %}
+        <div class = "candidate-details">
+            <div class="section-header">
+                <h2>Personal Information</h2>
+            </div>
+            
+            <div class = "form-group">
+                <label>Name:</label>
+                <p>{{ candidate.first_name if candidate else '' }} {{ candidate.middle_name if candidate and candidate.middle_name else '' }} {{ candidate.last_name if candidate else '' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Contact Numbers:</label>
+                <p>{{ candidate.contact_numbers|join(', ') if candidate and candidate.contact_numbers else 'Not specified' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Email IDs:</label>
+                <p>{{ candidate.email_ids|join(', ') if candidate and candidate.email_ids else 'Not specified' }}</p>
+            </div>
+
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+
+            <div class = "form-group">
+                <label>Class 12:</label>
+                <p>{{ candidate.education.class_12 if candidate and candidate.education and candidate.education.class_12 else 'Not specified' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>College:</label>
+                <p>{{ candidate.education.college if candidate and candidate.education and candidate.education.college else 'Not specified' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Higher Studies:</label>
+                <p>{{ candidate.education.higher_studies if candidate and candidate.education and candidate.education.higher_studies else 'Not specified' }}</p>
+            </div>
+
+            <div class="section-header">
+                <h2>Work & Skills</h2>
+            </div>
+
+            <div class = "form-group">
+                <label>Work Experience:</label>
+                <p>{{ candidate.work_experience if candidate and candidate.work_experience else 'Not specified' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Skillset:</label>
+                <p>{{ candidate.skillset|join(', ') if candidate and candidate.skillset else 'Not specified' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Technical Tools & Concepts:</label>
+                <p>{{ candidate.toolset|join(', ') if candidate and candidate.toolset else 'Not specified' }}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Programming Languages:</label>
+                <p>{{ candidate.programming_languages|join(', ') if candidate and candidate.programming_languages else 'Not specified' }}</p>
+            </div>
+
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+
+            {% if candidate and candidate.projects %}
+                {% for project in candidate.projects %}
+                <div class="project-details">
+                    <h3>{{ project.name }}</h3>
+                    <p><strong>Description:</strong> {{ project.description }}</p>
+                    <p><strong>Tech Stack:</strong> {{ project.tech_stack|join(', ') if project.tech_stack else 'Not specified' }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No projects specified</p>
+            {% endif %}
+
+            <div class="section-header">
+                <h2>Additional Information</h2>
+            </div>
+
+            <div class = "form-group">
+                <label>Certifications:</label>
+                <p>{{ candidate.certifications|join(', ') if candidate and candidate.certifications else 'Not specified' }}</p>
+            </div>
+
+            <div class="section-header">
+                <h2>Relevant Links</h2>
+            </div>
+
+            <div class = "form-group">
+                <label>LinkedIn:</label>
+                <p>{% if candidate and candidate.relevant_links and candidate.relevant_links.linkedin %}<a href="{{ candidate.relevant_links.linkedin }}" target="_blank">{{ candidate.relevant_links.linkedin }}</a>{% else %}Not specified{% endif %}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>GitHub:</label>
+                <p>{% if candidate and candidate.relevant_links and candidate.relevant_links.github %}<a href="{{ candidate.relevant_links.github }}" target="_blank">{{ candidate.relevant_links.github }}</a>{% else %}Not specified{% endif %}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Portfolio:</label>
+                <p>{% if candidate and candidate.relevant_links and candidate.relevant_links.portfolio %}<a href="{{ candidate.relevant_links.portfolio }}" target="_blank">{{ candidate.relevant_links.portfolio }}</a>{% else %}Not specified{% endif %}</p>
+            </div>
+
+            <div class = "form-group">
+                <label>Other Links:</label>
+                <p>
+                    {% if candidate and candidate.relevant_links and candidate.relevant_links.other %}
+                        {% for link in candidate.relevant_links.other %}
+                            <a href="{{ link }}" target="_blank">{{ link }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class = "form-actions">
+                <a href = "{{ url_for('edit_candidate', filename = filename) }}" class = "btn btn-primary">Edit</a>
+                <a href = "{{ url_for('results') }}" class = "btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if is_edit_mode %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle list-type fields
+            const listFields = ['contact_numbers', 'email_ids', 'skillset', 'toolset', 
+                               'programming_languages', 'certifications', 'other_links'];
+            
+            // Add project functionality
+            document.getElementById('add-project').addEventListener('click', function() {
+                const container = document.getElementById('projects-container');
+                const newProject = document.createElement('div');
+                newProject.className = 'project-entry';
+                newProject.innerHTML = `
+                    <div class="form-group">
+                        <label>Project Name:</label>
+                        <input type="text" name="project_names[]">
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <textarea name="project_descriptions[]" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Tech Stack (comma-separated):</label>
+                        <input type="text" name="project_tech_stacks[]">
+                    </div>
+                    <button type="button" class="btn btn-danger remove-project">Remove</button>
+                `;
+                container.appendChild(newProject);
+                
+                // Add event listener to the new remove button
+                newProject.querySelector('.remove-project').addEventListener('click', function() {
+                    container.removeChild(newProject);
+                });
+            });
+            
+            // Remove project functionality
+            document.querySelectorAll('.remove-project').forEach(button => {
+                button.addEventListener('click', function() {
+                    const projectEntry = this.closest('.project-entry');
+                    projectEntry.parentNode.removeChild(projectEntry);
+                });
+            });
+            
+            // Form submission handler
+            document.getElementById('candidateForm').addEventListener('submit', function(e) {
+                // Convert comma-separated strings to arrays for list fields
+                listFields.forEach(function(field) {
+                    const input = document.getElementById(field);
+                    if (input) {
+                        const value = input.value.trim();
+                        input.value = value ? value.split(',').map(item => item.trim()).join(',') : '';
+                    }
+                });
+            });
+        });
+    </script>
+    {% endif %}
+</body>
+</html> 
