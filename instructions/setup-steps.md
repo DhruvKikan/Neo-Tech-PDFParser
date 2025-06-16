@@ -11,7 +11,7 @@ scp -i <path-to-key> <file-zip> <username/ubuntu>@<ip>:/home/ubuntu
 `
 
 Pre-requisites:
-`sudo add-apt-repository universe`
+`sudo add-apt-repository universe`  
 `sudo apt-get update`  
 `sudo apt-get upgrade`
 
@@ -35,9 +35,7 @@ Configure reverse proxy:
 Navigate to /etc/nginx/sites-enabled
 Create new file named same as the deployment public IP address 
 
-`
-sudo nano "<public IP>"
-`
+`sudo nano "<public IP>"`
 
 Configuration/Contents
 
@@ -55,15 +53,11 @@ server {
 
 Install screen:
 
-`
-sudo apt-get install screen
-`
+`sudo apt-get install screen`
 
 Start a new screen session:
 
-`
-screen -S <session_name/mysession>
-`
+`screen -S <session_name/mysession>`
 
 Run your application inside the screen session:
 
@@ -74,10 +68,8 @@ Run your application inside the screen session:
 
 Restart nginx server:
 
-`
-sudo systemctl restart nginx
-sudo systemctl status nginx
-`
+`sudo systemctl restart nginx`  
+`sudo systemctl status nginx`  
 
 Detach from the screen session without stopping the process: Press Ctrl + A, then D.
 
