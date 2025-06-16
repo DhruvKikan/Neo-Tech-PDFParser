@@ -1,3 +1,41 @@
+SSH into AWS instance from CMD:
+
+'''
+ssh -i <path-to-key> <username/ubuntu>@<ip> (ip will be there on AWS dashboard)
+'''
+
+SCP to transfer files:
+
+'''
+scp -i <path-to-key> <file-zip> <username/ubuntu>@<ip>:/home/ubuntu
+'''
+
+Unzip the file:
+
+'''
+<look it up>
+'''
+
+HTTP enabling:
+
+'''
+sudo systemctl enable httpd
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+Final step:
+
 Install screen (if not already installed):
 
 '''
