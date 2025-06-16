@@ -1,8 +1,8 @@
 SSH into AWS instance from CMD:
 
 `
-ssh -i <path-to-key> <username/ubuntu>@<ip> (ip will be there on AWS dashboard)
-`
+ssh -i <path-to-key> <username/ubuntu>@<ip>` (ip will be there on AWS dashboard)
+
 
 SCP to transfer files:
 
