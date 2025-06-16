@@ -1,4 +1,4 @@
-Install screen (if not already installed):\
+Install screen (if not already installed):/
 
 '''
 sudo apt-get install screen
