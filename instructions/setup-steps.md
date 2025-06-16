@@ -11,7 +11,7 @@ scp -i <path-to-key> <file-zip> <username/ubuntu>@<ip>:/home/ubuntu
 `
 
 Pre-requisites:
-
+`sudo add-apt-repository universe`
 `sudo apt-get update`  
 `sudo apt-get upgrade`
 
@@ -20,13 +20,17 @@ Unzip the file:
 `sudo apt-get install unzip`  
 `unzip <file_name.zip> (optional -d distination_folder)`
 
+
+
+
+
 Base installations:
 
 `sudo apt install python3`  
 `sudo apt install python3-pip`  
 `sudo apt install nginx`  
-`pip install -r requirements`  
-`python3 run app.py`  
+`sudo apt install python3-venv`  
+`python3 -m venv my-project-env`  
 
 Configure reverse proxy:
 
@@ -65,9 +69,10 @@ screen -S <session_name/mysession>
 
 Run your application inside the screen session:
 
-`
-python my_app.py
-`
+`source my-project-env/bin/activate`  
+`pip install -r requirements`  
+`python3 run app.py`
+
 
 Restart nginx server:
 
