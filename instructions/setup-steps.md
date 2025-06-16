@@ -13,7 +13,8 @@ scp -i <path-to-key> <file-zip> <username/ubuntu>@<ip>:/home/ubuntu
 Unzip the file:
 
 `
-<look it up>
+sudo apt-get install unzip
+unzip <file_name.zip> (optional -d distination_folder)
 `
 
 Base installations:
