@@ -69,7 +69,7 @@ python my_app.py
 Restart nginx server:
 
 `
-sudo systemctl restart nginx/
+sudo systemctl restart nginx
 sudo systemctl status nginx
 `
 
