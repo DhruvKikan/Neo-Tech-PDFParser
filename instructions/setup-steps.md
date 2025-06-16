@@ -18,9 +18,9 @@ Unzip the file:
 
 Base installations:
 '''
-sudo apt install python3/
-sudo apt install nginx/
-pip install -r requirements/
+sudo apt install python3\
+sudo apt install nginx\
+pip install -r requirements\
 python3 run app.py
 '''
 
