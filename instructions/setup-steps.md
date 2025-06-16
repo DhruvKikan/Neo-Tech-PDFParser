@@ -1,6 +1,6 @@
 Install screen (if not already installed):
 
-'''bash
+''' bash
 sudo apt-get install screen
 '''
 Start a new screen session:
