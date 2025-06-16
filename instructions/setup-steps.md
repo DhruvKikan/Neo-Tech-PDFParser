@@ -21,9 +21,6 @@ Unzip the file:
 `unzip <file_name.zip> (optional -d distination_folder)`
 
 
-
-
-
 Base installations:
 
 `sudo apt install python3`  
