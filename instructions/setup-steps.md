@@ -36,7 +36,7 @@ sudo nano "<public IP>"
 
 Configuration/Contents
 
-`
+`bash
 server {
     listen 80;
     listen [::]:80;
