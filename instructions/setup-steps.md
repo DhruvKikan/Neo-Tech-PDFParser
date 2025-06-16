@@ -67,7 +67,7 @@ screen -S <session_name/mysession>
 Run your application inside the screen session:
 
 `source my-project-env/bin/activate`  
-`pip install -r requirements`  
+`pip install -r requirements.txt`  
 `python3 run app.py`
 
 
