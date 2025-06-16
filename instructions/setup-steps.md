@@ -1,6 +1,6 @@
 Install screen (if not already installed):
 
-'''console
+'''{r, engine='bash', count_lines}
 sudo apt-get install screen
 '''
 
