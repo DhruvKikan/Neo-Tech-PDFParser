@@ -10,6 +10,11 @@ SCP to transfer files:
 scp -i <path-to-key> <file-zip> <username/ubuntu>@<ip>:/home/ubuntu
 `
 
+Pre-requisites:
+
+`sudo apt-get update`
+`sudo apt-get upgrade`
+
 Unzip the file:
 
 `sudo apt-get install unzip`  
