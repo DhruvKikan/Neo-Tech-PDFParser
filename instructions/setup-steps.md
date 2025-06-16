@@ -2,7 +2,7 @@ Install screen (if not already installed):
 
 ''' console
 sudo apt-get install screen
-'''
+'''/\\/
 Start a new screen session:
 
 screen -S mysession
