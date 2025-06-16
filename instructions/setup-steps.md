@@ -12,19 +12,16 @@ scp -i <path-to-key> <file-zip> <username/ubuntu>@<ip>:/home/ubuntu
 
 Unzip the file:
 
-`
-sudo apt-get install unzip
-unzip <file_name.zip> (optional -d distination_folder)
-`
+`sudo apt-get install unzip`
+`unzip <file_name.zip> (optional -d distination_folder)`
 
 Base installations:
 
-`
-sudo apt install python3
-sudo apt install nginx
-pip install -r requirements
-python3 run app.py
-`
+`sudo apt install python3`
+`sudo apt install python3-pip`
+`sudo apt install nginx`
+`pip install -r requirements`
+`python3 run app.py`
 
 Configure reverse proxy:
 
