@@ -16,27 +16,39 @@ Unzip the file:
 <look it up>
 '''
 
-HTTP enabling:
+Base installations:
+'''
+sudo apt install python3/
+sudo apt install nginx/
+pip install -r requirements/
+python3 run app.py
+'''
+
+Configure reverse proxy:
+
+Navigate to /etc/nginx/sites-enabled
+Create new file named same as the deployment public IP address 
 
 '''
-sudo systemctl enable httpd
+sudo nano "<public IP>"
 '''
 
+Configuration/Contents
 
+'''
+server {
+    listen 80;
+    listen [::]:80;
+    server_name <YOUR INSTANCE IP>;
+        
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        include proxy_params;
+    }
+}
+'''
 
-
-
-
-
-
-
-
-
-
-
-Final step:
-
-Install screen (if not already installed):
+Install screen:
 
 '''
 sudo apt-get install screen
@@ -52,6 +64,13 @@ Run your application inside the screen session:
 
 '''
 python my_app.py
+'''
+
+Restart nginx server:
+
+'''
+sudo systemctl restart nginx/
+sudo systemctl status nginx
 '''
 
 Detach from the screen session without stopping the process: Press Ctrl + A, then D.
