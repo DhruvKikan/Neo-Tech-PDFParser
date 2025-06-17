@@ -28,6 +28,7 @@ Base installations:
 `sudo apt install nginx`  
 `sudo apt install python3-venv`  
 `sudo apt-get install -y tesseract-ocr libgl1-mesa-glx libglib2.0-0`  
+`sudo apt install tesseract-ocr`  
 `python3 -m venv my-project-env`  
 
 Configure reverse proxy:
